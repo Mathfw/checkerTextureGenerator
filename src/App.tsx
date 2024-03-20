@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
+import Canvas from './components/Canvas'
+import { NumberInput } from './components/NumberInput'
+import { ThemeProvider } from './components/ThemProvider'
+import { RangeInput } from './components/RangeInput'
+import { ColorPicker } from './components/ColorPicker'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ThemeProvider>
+        <nav>
+          <p>Hello World</p>
+        </nav>
+        <main className='flex flex-row items-center justify-between'>
+          <div className='grid grid-cols-2 gap-4'>
+            <NumberInput placeholder='dimensions' label='dimensions'></NumberInput>
+            <RangeInput id='rounded' label='rounded'></RangeInput>
+          </div>
+          <Canvas id="checker"></Canvas>
+          <div className='grid grid-cols-2 gap-4'>
+            <ColorPicker canvasId='color01picker' defaultColor='#fff' placeholder='color01' label='color01'></ColorPicker>
+          </div>
+        </main>
+        <footer>
+          <a href="https://github.com/Mathfw">github</a>
+        </footer>
+      </ThemeProvider>
     </>
   )
 }
