@@ -19,7 +19,6 @@ function App() {
             <NumberInput placeholder='dimensions' label='dimensions'></NumberInput>
             <RangeInput id='rounded' label='rounded'></RangeInput>
           </div>
-          <Canvas id="checker"></Canvas>
           <div className='grid grid-cols-2 gap-4'>
             <ColorPicker canvasId='color01picker' defaultColor='#fff' placeholder='color01' label='color01'></ColorPicker>
           </div>

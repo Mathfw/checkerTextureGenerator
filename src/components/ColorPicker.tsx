@@ -29,7 +29,6 @@ export function ColorPicker(
                         <Label className="text-start uppercase font-black">hex</Label>
                         <Input type="text" placeholder="hex"></Input>
                     </div>
-                    <Canvas id={canvasId} width={384} height={384}></Canvas>
                 </div>
             </PopoverContent>
         </Popover>
